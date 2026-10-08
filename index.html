@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>you got hacked</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0d0d0d;
+      color: #39ff14;
+      font-family: "Courier New", monospace;
+      text-align: center;
+      overflow: hidden;
+    }
+    .rain {
+      position: fixed;
+      top: -100%;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      opacity: 0.08;
+      font-size: 14px;
+      white-space: pre;
+      animation: fall 12s linear infinite;
+      z-index: 0;
+    }
+    @keyframes fall { to { transform: translateY(200vh); } }
+    .box {
+      position: relative;
+      z-index: 1;
+      padding: 3rem 2.5rem;
+      border: 2px solid #39ff14;
+      border-radius: 6px;
+      background: rgba(0, 255, 0, 0.03);
+      box-shadow: 0 0 40px rgba(57, 255, 20, 0.25);
+      max-width: 90vw;
+    }
+    h1 {
+      font-size: clamp(2rem, 8vw, 4rem);
+      letter-spacing: 4px;
+      animation: glitch 2s infinite;
+    }
+    p { margin-top: 1.2rem; color: #7cff6b; font-size: 1rem; line-height: 1.6; }
+    .blink { animation: blink 1s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+    @keyframes glitch {
+      0%, 90%, 100% { transform: none; text-shadow: none; }
+      92% { transform: translateX(-3px); text-shadow: 3px 0 #ff00c8; }
+      94% { transform: translateX(3px); text-shadow: -3px 0 #00e5ff; }
+      96% { transform: none; text-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="rain">01001000 01000001 01000011 01001011 01000101 01000100
+01101001 01110100 00100000 01101001 01110011 00100000 01101100 01100001 01110101 01100111 01101000
+01010011 01010100 01001111 01010000 00100001 00100001 00100001</div>
+  <div class="box">
+    <h1>YOU GOT HACKED</h1>
+    <p>just kidding &mdash; nothing happened.<br>
+    this is a prank page. your data is safe.<span class="blink"> _</span></p>
+  </div>
+</body>
+</html>
